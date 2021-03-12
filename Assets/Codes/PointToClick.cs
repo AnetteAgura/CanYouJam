@@ -2,18 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClickToMove : MonoBehaviour
+public class PointToClick : MonoBehaviour
 {
     private float speed = 4;
 
     private Vector3 targetPosition;
     private bool isMoving = false;
 
+    Animator anim;
+
     // Start is called before the first frame update
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetMouseButton(0))
         {
@@ -44,4 +50,5 @@ public class ClickToMove : MonoBehaviour
             isMoving = false;
         }
     }
+
 }
