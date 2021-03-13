@@ -8,11 +8,21 @@ public class ShowScore : MonoBehaviour
     public Text countText;
     public Image youWin;
     public Text youWinText;
+    public Button replay;
+    public Button mainMenu;
+    public Text replayText;
+    public Text mainMenuText;
 
     // Start is called before the first frame update
     void Start()
     {
         SetCountText();
+        youWin.enabled = false;
+        youWinText.enabled = false;
+        replay.enabled = false;
+        mainMenu.enabled = false;
+        mainMenuText.enabled = false;
+        replayText.enabled = false;
     }
 
     // Update is called once per frame
@@ -29,6 +39,20 @@ public class ShowScore : MonoBehaviour
         {
             youWin.enabled = true;
             youWinText.enabled = true;
+            replay.enabled = true;
+            mainMenu.enabled = true;
+            mainMenuText.enabled = true;
+            replayText.enabled = true;
+        }
+
+        if (StaticScore.score == 0)
+        {
+            youWin.enabled = false;
+            youWinText.enabled = false;
+            replay.enabled = false;
+            mainMenu.enabled = false;
+            mainMenuText.enabled = false;
+            replayText.enabled = false;
         }
     }
 }
