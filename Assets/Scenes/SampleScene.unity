@@ -13010,8 +13010,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 874471061}
-  leftLimit: -5.53
-  rightLimit: 5.32
+  leftLimit: -8
+  rightLimit: 8.2
   bottomLimit: -6.22
   topLimit: 5.26
   minPosition: {x: -15, y: -2}
@@ -13791,7 +13791,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 776954638}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.82, y: -3.599842, z: 11.804311}
+  m_LocalPosition: {x: 22.82, y: -3.63, z: 11.804311}
   m_LocalScale: {x: 2.5500412, y: 2.9727755, z: 1}
   m_Children: []
   m_Father: {fileID: 1007414617}
