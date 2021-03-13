@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeCollapse : MonoBehaviour
+public class CarCollapse : MonoBehaviour
 {
     Animator anim;
 
@@ -13,14 +13,15 @@ public class TreeCollapse : MonoBehaviour
 
     IEnumerator OnCollisionEnter2D(Collision2D col)
     {
-        if (StaticScore.score >= 20) { 
+        if (StaticScore.score >= 50)
+        {
             if (col.gameObject.tag == "Player")
             {
                 anim.SetTrigger("Collapse");
 
                 GetComponent<BoxCollider2D>().enabled = false;
 
-                StaticScore.score += 10;
+                StaticScore.score += 15;
 
                 Debug.Log(StaticScore.score);
 
