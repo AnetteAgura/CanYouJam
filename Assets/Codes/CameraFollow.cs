@@ -5,14 +5,38 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
 
-    public Transform followTransform;
-
+    public Transform target;
+    [SerializeField]
+    float leftLimit;
+    [SerializeField]
+    float rightLimit;
+    [SerializeField]
+    float bottomLimit;
+    [SerializeField]
+    float topLimit;
+    public Vector2 minPosition;
+    public Vector2 maxPosition;
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        this.transform.position = new Vector3(followTransform.position.x, followTransform.position.y, this.transform.position.z);
+        this.transform.position = new Vector3(target.position.x, target.position.y, this.transform.position.z);
 
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, leftLimit, rightLimit),
+            Mathf.Clamp(transform.position.y, bottomLimit, topLimit),
+            transform.position.z
+            );
+        
+    }
 
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(new Vector2(leftLimit, topLimit), new Vector2(rightLimit, topLimit));
+        Gizmos.DrawLine(new Vector2(rightLimit, topLimit), new Vector2(rightLimit, bottomLimit));
+        Gizmos.DrawLine(new Vector2(rightLimit, bottomLimit), new Vector2(leftLimit, bottomLimit));
+        Gizmos.DrawLine(new Vector2(leftLimit, bottomLimit), new Vector2(leftLimit, topLimit));
     }
 }
+
