@@ -8,6 +8,10 @@ using UnityEngine.UI;
 public class Subtitles : MonoBehaviour
 {
     public GameObject textBox;
+    public Image antivirus1;
+    public Image antivirus2;
+    public Text antivirus1Text;
+    public Text antivirus2Text;
     // Start is called before the first frame update
     void Start()
     {
@@ -91,6 +95,10 @@ public class Subtitles : MonoBehaviour
         yield return new WaitForSeconds(1);
         textBox.GetComponent<Text>().text = "Also...";
         yield return new WaitForSeconds(1);
+        antivirus1.GetComponent<Image>().enabled = true;
+        antivirus2.GetComponent<Image>().enabled = true;
+        antivirus1Text.GetComponent<Text>().enabled = true;
+        antivirus2Text.GetComponent<Text>().enabled = true;
         textBox.GetComponent<Text>().text = "Look out for the Anti-Virus guards";
         yield return new WaitForSeconds(2);
        

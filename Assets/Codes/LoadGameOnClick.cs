@@ -8,5 +8,6 @@ public class LoadGameOnClick : MonoBehaviour
     {
         Application.LoadLevel(level);
         StaticScore.score = 0;
+        Time.timeScale = 1;
     }
 }
