@@ -20,11 +20,11 @@ public class TreeCollapse : MonoBehaviour
 
                 GetComponent<BoxCollider2D>().enabled = false;
 
-                StaticScore.score += 10;
-
                 Debug.Log(StaticScore.score);
 
                 yield return new WaitForSeconds(1);
+
+                StaticScore.score += 10;
 
                 Destroy(gameObject);
                 Debug.Log("Trigger!");

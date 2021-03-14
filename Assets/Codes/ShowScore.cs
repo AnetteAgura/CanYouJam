@@ -13,6 +13,8 @@ public class ShowScore : MonoBehaviour
     public Text replayText;
     public Text mainMenuText;
     public Text youLose;
+    public GameObject audio;
+    private AudioSource audi;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,7 @@ public class ShowScore : MonoBehaviour
         mainMenuText.enabled = false;
         replayText.enabled = false;
         youLose.enabled = false;
+        audi = audio.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -71,7 +74,7 @@ public class ShowScore : MonoBehaviour
             youLose.enabled = true;
             youWinText.enabled = false;
             Time.timeScale = 0;
-
+            audi.mute = true;
         }
     }
 }

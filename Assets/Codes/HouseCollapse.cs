@@ -21,11 +21,11 @@ public class HouseCollapse : MonoBehaviour
 
                 GetComponent<BoxCollider2D>().enabled = false;
 
-                StaticScore.score += 25;
-
                 Debug.Log(StaticScore.score);
 
                 yield return new WaitForSeconds(1);
+
+                StaticScore.score += 25;
 
                 Destroy(gameObject);
                 Debug.Log("Trigger!");

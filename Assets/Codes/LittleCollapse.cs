@@ -21,11 +21,11 @@ public class LittleCollapse : MonoBehaviour
 
                 GetComponent<BoxCollider2D>().enabled = false;
 
-                StaticScore.score += 2;
-
                 Debug.Log(StaticScore.score);
 
                 yield return new WaitForSeconds(1);
+
+                StaticScore.score += 2;
 
                 Destroy(gameObject);
                 Debug.Log("Trigger!");

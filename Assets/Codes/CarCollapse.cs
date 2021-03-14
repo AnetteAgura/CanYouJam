@@ -21,11 +21,12 @@ public class CarCollapse : MonoBehaviour
 
                 GetComponent<BoxCollider2D>().enabled = false;
 
-                StaticScore.score += 15;
 
                 Debug.Log(StaticScore.score);
 
                 yield return new WaitForSeconds(1);
+
+                StaticScore.score += 15;
 
                 Destroy(gameObject);
                 Debug.Log("Trigger!");
